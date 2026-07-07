@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reparación iPhone | Berlín</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #141414;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #262626;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% -20%, #451a03 0%, var(--bg-dark) 60%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -1px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    p.hero-text {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+      font-weight: 300;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin: 0 0 1rem 0;
+      color: var(--text-main);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: #000;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Especialistas en <span>iPhone</span></h1>
+    <p class="hero-text">Servicio técnico rápido en Berlín. Enfocados exclusivamente en darle una segunda vida a la pantalla y batería de tu dispositivo Apple.</p>
+    <a href="#contacto" class="btn">Pedir Presupuesto</a>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Cambio de Pantalla</h3>
+        <p>Sustitución de displays rotos o con fallos táctiles. Recupera la nitidez, los colores originales y la respuesta inmediata de tu iPhone en tiempo récord.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔋</div>
+        <h3>Reemplazo de Batería</h3>
+        <p>¿Tu iPhone se apaga rápido o no llega al final del día? Instalamos baterías nuevas para que tu dispositivo recupere el 100% de su capacidad original.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Privacidad Total</h3>
+        <p>Reparamos el hardware, no miramos tu software. No necesitamos tu código de desbloqueo para realizar el cambio físico de piezas. Tus datos están seguros.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="contacto" class="container" style="padding-top: 0; text-align: center;">
+    <h2 class="section-title">¿Listo para reparar tu iPhone?</h2>
+    <p class="hero-text" style="margin-bottom: 2rem;">Trabajamos con repuestos de alta calidad y tiempos de entrega optimizados.</p>
+    <a href="mailto:tu-correo@ejemplo.com" class="btn" style="background-color: transparent; border: 1px solid var(--accent); color: var(--accent);">Enviar un Email</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Tech Repair Berlín. Especialistas en iPhone.</p>
+  </footer>
+
+</body>
+</html>
