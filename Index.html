@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Repair Berlin | Reparación de iPhone</title>
+    <style>
+        /* Variables de color para cambiar el estilo fácilmente */
+        :root {
+            --bg-principal: #121214;
+            --bg-secundario: #1a1a1e;
+            --texto-principal: #ffffff;
+            --texto-secundario: #a0a0a5;
+            --acento: #0071e3; /* Azul estilo Apple */
+            --acento-hover: #0077ed;
+            --borde: #2c2c30;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(18, 18, 20, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--acento);
+        }
+
+        nav a {
+            color: var(--texto-secundario);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--texto-principal);
+        }
+
+        /* Sección Hero (Principal) */
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            color: var(--texto-secundario);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--acento);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--acento-hover);
+        }
+
+        /* Contenedor de secciones */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Tabla de Precios */
+        .precios-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-secundario);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            border: 1px solid var(--borde);
+        }
+
+        .precios-tabla th, .precios-tabla td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+        }
+
+        .precios-tabla th {
+            background-color: #242428;
+            font-weight: 600;
+            color: var(--texto-secundario);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .precios-tabla tr {
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .precios-tabla tr:last-child {
+            border-bottom: none;
+        }
+
+        .precio-valor {
+            font-weight: 600;
+            color: var(--acento);
+            text-align: right;
+        }
+
+        /* Sección Privacidad / Garantía */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--bg-secundario);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--borde);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+        }
+
+        /* Sección Contacto */
+        .contacto-seccion {
+            background-color: var(--bg-secundario);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--borde);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contacto-seccion p {
+            color: var(--texto-secundario);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--texto-secundario);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--borde);
+            margin-top: 4rem;
+        }
+
+        /* Ajustes para móviles */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-container { padding: 1rem; }
+            nav a { margin-left: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">TechRepair<span>Berlin</span></div>
+            <nav>
+                <a href="#precios">Precios</a>
+                <a href="#garantia">Garantía</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Especialistas en Berlín</h1>
+            <p>Cambio rápido de pantallas y baterías para iPhone. Privacidad garantizada.</p>
+            <a href="#contacto" class="btn">Solicitar Reparación</a>
+        </section>
+
+        <div class="container">
+            
+            <!-- Sección Precios -->
+            <section id="precios">
+                <h2>Tarifas de Reparación</h2>
+                <table class="precios-tabla">
+                    <thead>
+                        <tr>
+                            <th>Modelo</th>
+                            <th>Cambio de Pantalla</th>
+                            <th style="text-align: right;">Cambio de Batería</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí puedes ir modificando o añadiendo tus modelos y precios reales -->
+                        <tr>
+                            <td>iPhone 15 Pro Max / 15 Pro</td>
+                            <td>Consultar €</td>
+                            <td class="precio-valor">Consultar €</td>
+                        </tr>
+                        <tr>
+                            <td>iPhone 14 Pro Max / 14 Pro</td>
+                            <td>En mantenimiento €</td>
+                            <td class="precio-valor">En mantenimiento €</td>
+                        </tr>
+                        <tr>
+                            <td>iPhone 13 / 13 Pro</td>
+                            <td>000 €</td>
+                            <td class="precio-valor">00 €</td>
+                        </tr>
+                        <tr>
+                            <td>iPhone 12 / 12 Pro</td>
+                            <td>000 €</td>
+                            <td class="precio-valor">00 €</td>
+                        </tr>
+                        <tr>
+                            <td>iPhone 11</td>
+                            <td>000 €</td>
+                            <td class="precio-valor">00 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sección Características / Confianza -->
+            <section id="garantia" class="features">
+                <div class="card">
+                    <h3>🔒 Privacidad Garantizada</h3>
+                    <p>Tus datos personales no nos interesan, solo reparar tu dispositivo. No necesitas facilitar tu código de desbloqueo a menos que sea estrictamente necesario para un test de hardware.</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Servicio Rápido</h3>
+                    <p>Sabemos lo importante que es tu teléfono. Gestionamos los cambios de pantalla y batería con la máxima fluidez y precisión técnica para que vuelvas a estar conectado cuanto antes.</p>
+                </div>
+                <div class="card">
+                    <h3>🛠️ Componentes Testeados</h3>
+                    <p>Cada pieza instalada pasa un control de calidad para asegurar un brillo óptimo, respuesta táctil perfecta y una salud de batería duradera.</p>
+                </div>
+            </section>
+
+            <!-- Sección Contacto -->
+            <section id="contacto" class="contacto-seccion">
+                <h2>¿Necesitas reparar tu iPhone?</h2>
+                <p>Escríbeme directamente por WhatsApp para confirmar el stock de la pieza, darte un presupuesto cerrado y organizar la entrega o el envío por correo.</p>
+                <!-- Reemplaza el número de teléfono abajo (ej: 49123456789) con el tuyo propio -->
+                <a href="https://wa.me/49123456789?text=Hola,%20necesito%20un%20presupuesto%20para%20reparar%20mi%20iPhone" class="btn" target="_blank" style="background-color: #25D366;">
+                    💬 Contactar por WhatsApp
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tech Repair Berlin. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
