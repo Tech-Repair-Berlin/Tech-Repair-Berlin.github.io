@@ -3,101 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Repair Berlin | Expertos en iPhone</title>
+    <title>Tech Repair Berlin - Reparación de iPhone</title>
     <style>
-        :root {
-            --primary: #000000;
-            --accent: #2997ff;
-            --bg-color: #f5f5f7;
-            --card-bg: #ffffff;
-            --text-main: #1d1d1f;
-            --text-muted: #86868b;
-        }
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
         }
         header {
-            background-color: var(--card-bg);
-            padding: 40px 20px;
+            background-color: #1f1f1f;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+            border-bottom: 2px solid #333;
         }
-        h1 { margin: 0; font-size: 2.5rem; font-weight: 700; letter-spacing: -1px; }
-        .subtitle { color: var(--text-muted); font-size: 1.2rem; margin-top: 5px; }
-        
+        h1 { margin: 0; color: #fff; }
         .container {
-            max-width: 650px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
         }
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 18px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-            transition: transform 0.3s ease;
+        .tarjeta {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-        .card:hover { transform: translateY(-3px); }
-        h2 { font-size: 1.5rem; margin-top: 0; }
-        
-        select, input, textarea {
+        select, input, textarea, button {
             width: 100%;
-            padding: 14px;
-            margin: 10px 0 20px;
-            border-radius: 12px;
-            border: 1px solid #d2d2d7;
-            background-color: #fafafa;
-            font-size: 16px;
-            font-family: inherit;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background-color: #2a2a2a;
+            color: white;
             box-sizing: border-box;
-            transition: border-color 0.2s;
-        }
-        select:focus, input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent);
+            font-size: 16px;
         }
         button {
-            width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            border: none;
-            background-color: var(--accent);
+            background-color: #007aff;
             color: white;
-            font-size: 16px;
-            font-weight: 600;
+            border: none;
             cursor: pointer;
-            transition: background-color 0.2s;
+            font-weight: bold;
         }
-        button:hover { background-color: #0071e3; }
-        
-        .price-box {
+        button:hover { background-color: #0056b3; }
+        #resultados {
             display: none;
-            background: #fcfcfc;
-            border: 1px solid #e5e5ea;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 10px;
-            animation: fadeIn 0.4s ease;
-        }
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #e5e5ea;
-        }
-        .price-item:last-child { border-bottom: none; }
-        .price-value { font-weight: 600; font-size: 1.1rem; color: var(--primary); }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-left: 4px solid #007aff;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -105,15 +64,15 @@
 
     <header>
         <h1>Tech Repair Berlin</h1>
-        <div class="subtitle">Servicio técnico experto en iPhone</div>
+        <p>Especialistas en tu iPhone</p>
     </header>
 
     <div class="container">
-        
-        <div class="card">
-            <h2>Consulta nuestras tarifas</h2>
-            <select id="iphoneSelect" onchange="updatePrices()">
-                <option value="">Selecciona tu modelo...</option>
+        <div class="tarjeta">
+            <h2>Calcula tu reparación</h2>
+            <label for="modeloIphone">Selecciona tu modelo:</label>
+            <select id="modeloIphone" onchange="calcularPrecio()">
+                <option value="">-- Elige un iPhone --</option>
                 <option value="13">iPhone 13</option>
                 <option value="14">iPhone 14</option>
                 <option value="15">iPhone 15</option>
@@ -121,31 +80,26 @@
                 <option value="17">iPhone 17</option>
             </select>
 
-            <div id="priceDisplay" class="price-box">
-                <div class="price-item">
-                    <span>Sustitución de Pantalla Original</span>
-                    <span id="valPantalla" class="price-value"></span>
-                </div>
-                <div class="price-item">
-                    <span>Sustitución de Batería</span>
-                    <span id="valBateria" class="price-value"></span>
-                </div>
+            <div id="resultados">
+                <h3 id="nombreModelo"></h3>
+                <p><strong>Cambio de Pantalla:</strong> <span id="precioPantalla"></span></p>
+                <p><strong>Cambio de Batería:</strong> <span id="precioBateria"></span></p>
             </div>
         </div>
 
-        <div class="card">
-            <h2>Pide tu cita o consúltanos</h2>
+        <div class="tarjeta">
+            <h2>Contáctanos</h2>
             <form>
-                <input type="text" placeholder="Nombre completo" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <textarea rows="4" placeholder="Detalla el problema de tu dispositivo..." required></textarea>
-                <button type="button">Enviar Solicitud</button>
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <textarea rows="4" placeholder="¿Qué le ocurre a tu dispositivo?" required></textarea>
+                <button type="button">Enviar Mensaje</button>
             </form>
         </div>
     </div>
 
     <script>
-        const tarifasIphone = {
+        const precios = {
             "13": { pantalla: "120€", bateria: "65€" },
             "14": { pantalla: "150€", bateria: "75€" },
             "15": { pantalla: "180€", bateria: "85€" },
@@ -153,16 +107,17 @@
             "17": { pantalla: "250€", bateria: "110€" }
         };
 
-        function updatePrices() {
-            const select = document.getElementById("iphoneSelect").value;
-            const display = document.getElementById("priceDisplay");
+        function calcularPrecio() {
+            const modelo = document.getElementById("modeloIphone").value;
+            const resultados = document.getElementById("resultados");
             
-            if (select) {
-                document.getElementById("valPantalla").innerText = tarifasIphone[select].pantalla;
-                document.getElementById("valBateria").innerText = tarifasIphone[select].bateria;
-                display.style.display = "block";
+            if (modelo) {
+                document.getElementById("nombreModelo").innerText = "Precios para iPhone " + modelo;
+                document.getElementById("precioPantalla").innerText = precios[modelo].pantalla;
+                document.getElementById("precioBateria").innerText = precios[modelo].bateria;
+                resultados.style.display = "block";
             } else {
-                display.style.display = "none";
+                resultados.style.display = "none";
             }
         }
     </script>
