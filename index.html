@@ -1,257 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reparación iPhone | Berlín</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-card: #141414;
-      --accent: #f59e0b;
-      --accent-hover: #d97706;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border-color: #262626;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      margin: 0;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    header {
-      padding: 6rem 2rem 4rem;
-      text-align: center;
-      background: radial-gradient(circle at 50% -20%, #451a03 0%, var(--bg-dark) 60%);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -1px;
-    }
-
-    h1 span {
-      color: var(--accent);
-    }
-
-    p.hero-text {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 1.5rem auto 0;
-      font-weight: 300;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 2.5rem;
-      transition: all 0.3s ease;
-      text-align: center;
-    }
-
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.1);
-    }
-
-    .card-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .card h3 {
-      font-size: 1.3rem;
-      margin: 0 0 1rem 0;
-      color: var(--text-main);
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin: 0;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: var(--accent);
-      color: #000;
-      padding: 1rem 2.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      margin-top: 2rem;
-      transition: all 0.3s ease;
-      border: 2px solid var(--accent);
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background-color: var(--accent-hover);
-      border-color: var(--accent-hover);
-      transform: scale(1.05);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--accent);
-      color: #000;
-    }
-
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-      text-align: center;
-    }
-
-    .contact-item {
-      padding: 1.5rem;
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-    }
-
-    .contact-item h4 {
-      margin: 0 0 0.5rem 0;
-      color: var(--accent);
-    }
-
-    .contact-item p {
-      margin: 0;
-      color: var(--text-muted);
-    }
-
-    .contact-item a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--border-color);
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      header {
-        padding: 3rem 1rem 2rem;
-      }
-
-      .container {
-        padding: 2rem 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Repair Berlin | Expertos en iPhone</title>
+    <style>
+        :root {
+            --primary: #000000;
+            --accent: #2997ff;
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        header {
+            background-color: var(--card-bg);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+        }
+        h1 { margin: 0; font-size: 2.5rem; font-weight: 700; letter-spacing: -1px; }
+        .subtitle { color: var(--text-muted); font-size: 1.2rem; margin-top: 5px; }
+        
+        .container {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-3px); }
+        h2 { font-size: 1.5rem; margin-top: 0; }
+        
+        select, input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0 20px;
+            border-radius: 12px;
+            border: 1px solid #d2d2d7;
+            background-color: #fafafa;
+            font-size: 16px;
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        select:focus, input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            background-color: var(--accent);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover { background-color: #0071e3; }
+        
+        .price-box {
+            display: none;
+            background: #fcfcfc;
+            border: 1px solid #e5e5ea;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 10px;
+            animation: fadeIn 0.4s ease;
+        }
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e5ea;
+        }
+        .price-item:last-child { border-bottom: none; }
+        .price-value { font-weight: 600; font-size: 1.1rem; color: var(--primary); }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Especialistas en <span>iPhone</span></h1>
-    <p class="hero-text">Servicio técnico rápido en Berlín. Enfocados exclusivamente en darle una segunda vida a la pantalla y batería de tu dispositivo Apple.</p>
-    <a href="#contacto" class="btn">Pedir Presupuesto</a>
-  </header>
+    <header>
+        <h1>Tech Repair Berlin</h1>
+        <div class="subtitle">Servicio técnico experto en iPhone</div>
+    </header>
 
-  <div class="container">
-    <h2 class="section-title">Nuestros Servicios</h2>
-    
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>Cambio de Pantalla</h3>
-        <p>Sustitución de displays rotos o con fallos táctiles. Recupera la nitidez, los colores originales y la respuesta inmediata de tu iPhone en tiempo récord.</p>
-      </div>
+    <div class="container">
+        
+        <div class="card">
+            <h2>Consulta nuestras tarifas</h2>
+            <select id="iphoneSelect" onchange="updatePrices()">
+                <option value="">Selecciona tu modelo...</option>
+                <option value="13">iPhone 13</option>
+                <option value="14">iPhone 14</option>
+                <option value="15">iPhone 15</option>
+                <option value="16">iPhone 16</option>
+                <option value="17">iPhone 17</option>
+            </select>
 
-      <div class="card">
-        <div class="card-icon">🔋</div>
-        <h3>Reemplazo de Batería</h3>
-        <p>¿Tu iPhone se apaga rápido o no llega al final del día? Instalamos baterías nuevas para que tu dispositivo recupere el 100% de su capacidad original.</p>
-      </div>
+            <div id="priceDisplay" class="price-box">
+                <div class="price-item">
+                    <span>Sustitución de Pantalla Original</span>
+                    <span id="valPantalla" class="price-value"></span>
+                </div>
+                <div class="price-item">
+                    <span>Sustitución de Batería</span>
+                    <span id="valBateria" class="price-value"></span>
+                </div>
+            </div>
+        </div>
 
-      <div class="card">
-        <div class="card-icon">🔒</div>
-        <h3>Privacidad Total</h3>
-        <p>Reparamos el hardware, no miramos tu software. No necesitamos tu código de desbloqueo para realizar el cambio físico de piezas. Tus datos están seguros.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="contacto" class="container" style="text-align: center;">
-    <h2 class="section-title">¿Listo para reparar tu iPhone?</h2>
-    <p class="hero-text">Trabajamos con repuestos de alta calidad y tiempos de entrega optimizados.</p>
-    
-    <div class="contact-info">
-      <div class="contact-item">
-        <h4>📞 Teléfono</h4>
-        <p><a href="tel:+493012345678">+49 30 1234 5678</a></p>
-      </div>
-      <div class="contact-item">
-        <h4>💬 WhatsApp</h4>
-        <p><a href="https://wa.me/493012345678" target="_blank">+49 30 1234 5678</a></p>
-      </div>
-      <div class="contact-item">
-        <h4>📧 Email</h4>
-        <p><a href="mailto:contacto@techrepairberlin.com">contacto@techrepairberlin.com</a></p>
-      </div>
+        <div class="card">
+            <h2>Pide tu cita o consúltanos</h2>
+            <form>
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea rows="4" placeholder="Detalla el problema de tu dispositivo..." required></textarea>
+                <button type="button">Enviar Solicitud</button>
+            </form>
+        </div>
     </div>
 
-    <a href="mailto:contacto@techrepairberlin.com" class="btn btn-outline">Enviar un Email</a>
-  </div>
+    <script>
+        const tarifasIphone = {
+            "13": { pantalla: "120€", bateria: "65€" },
+            "14": { pantalla: "150€", bateria: "75€" },
+            "15": { pantalla: "180€", bateria: "85€" },
+            "16": { pantalla: "210€", bateria: "95€" },
+            "17": { pantalla: "250€", bateria: "110€" }
+        };
 
-  <footer>
-    <p>&copy; 2026 Tech Repair Berlín. Especialistas en iPhone.</p>
-  </footer>
-
+        function updatePrices() {
+            const select = document.getElementById("iphoneSelect").value;
+            const display = document.getElementById("priceDisplay");
+            
+            if (select) {
+                document.getElementById("valPantalla").innerText = tarifasIphone[select].pantalla;
+                document.getElementById("valBateria").innerText = tarifasIphone[select].bateria;
+                display.style.display = "block";
+            } else {
+                display.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
