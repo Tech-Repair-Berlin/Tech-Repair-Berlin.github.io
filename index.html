@@ -28,6 +28,9 @@
             color: var(--texto-principal);
             line-height: 1.8;
             font-size: 1.15rem;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Estándar */
         }
 
         header {
@@ -494,7 +497,6 @@
 
     <!-- SCRIPT DE PRECIOS DINÁMICOS -->
     <script>
-        // Aquí puedes cambiar fácilmente los precios si lo necesitas en el futuro
         const tarifas = {
             '17': {
                 '17': { pOrg: 300, pCop: 180, bOrg: 90, bCop: 70 },
@@ -528,7 +530,6 @@
             }
         };
 
-        // Función que hace la magia de cambiar el precio en pantalla
         function actualizarPrecio(serie) {
             const modeloSeleccionado = document.getElementById('select-' + serie).value;
             const preciosDelModelo = tarifas[serie][modeloSeleccionado];
@@ -540,16 +541,14 @@
         }
     </script>
 
-    <!-- SCRIPT DE BLOQUEO DE INSPECCIÓN -->
+    <!-- SCRIPT DE BLOQUEO DE INSPECCIÓN Y CLIC DERECHO -->
     <script>
-        // Bloquear el clic derecho
         document.addEventListener('contextmenu', event => event.preventDefault());
 
-        // Bloquear atajos de teclado (F12, Ctrl+Shift+I, Ctrl+U)
         document.onkeydown = function(e) {
-            if (e.keyCode == 123) { return false; } // Bloquea F12
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) { return false; } // Bloquea Ctrl+Shift+I
-            if (e.ctrlKey && e.keyCode == 85) { return false; } // Bloquea Ctrl+U (ver código fuente)
+            if (e.keyCode == 123) { return false; } 
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) { return false; } 
+            if (e.ctrlKey && e.keyCode == 85) { return false; } 
         };
     </script>
 
